@@ -1,0 +1,24 @@
+<% provide(:title, "ROOM") %>
+<div class="main-view">
+
+<div id="chat-scroll" class="messages">
+  <div id="messages", data-room_id="<%= @room.id %>" class="chat-view-area">
+    <%= render @messages %>
+  </div>
+</div>
+
+<div class="nav">
+  <p class="back-button">◁</p>
+  <p class="room-title">title(10)</p>
+  <p class="menu-button">▽</p>
+</div>
+
+<form class="send-form">
+  <div class="send-form-position">
+    <textarea data-behavior="room_speaker" class="text-input-area" wrap="hard"></textarea>
+    <a class="chat-menu-button" id="send-button">send</a>
+    <a class="chat-menu-button">＋</a>
+    <a class="chat-menu-button" id="scroll_down_button">⬇</a>
+  </div>
+</form>
+</div>

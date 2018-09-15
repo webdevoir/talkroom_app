@@ -1,0 +1,8 @@
+<div class="chat-box">
+  <div class="chat-area">
+    <p class="time-id-info"><%= "#{message.user_name} #{simple_time(message.created_at)}" %></p>
+    <div class="chat-balloon">
+      <pre id="msg_id"><%= message.content %></pre>
+    </div>
+  </div>
+</div>
