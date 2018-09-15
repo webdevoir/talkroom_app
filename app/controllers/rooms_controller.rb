@@ -8,6 +8,8 @@ class RoomsController < ApplicationController
     if !logged_in?
       new_user_setting
       log_in @user
+    else
+      @user = current_user
     end
   end
 
