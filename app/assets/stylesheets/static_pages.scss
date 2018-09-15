@@ -1,0 +1,60 @@
+.box {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+@media screen and (max-width: 320px) and (max-width: 480px) {
+  .box {
+    width: 320px;
+    height: 480px;
+  }
+}
+
+.page-title {
+  font-size: 5em;
+}
+
+.doar-square {
+  width: 4em;
+  height: 5em;
+  border: 1px solid gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.doar-circle {
+  width: 1em;
+  height: 1em;
+  border: 1px solid gray;
+  border-radius: 50%;
+  margin-left: 0.2em;
+}
+
+.doar-square:hover {
+  background: gray;
+  boder: 1.5em solid white;
+  cursor: pointer;
+  .doar-circle {
+    border: 1px solid white;
+  }
+}
