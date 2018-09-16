@@ -211,7 +211,7 @@
   }
   .room-search {
     width: 70%;
-    margin: 10% auto 5% auto;
+    margin: 3% auto 5% auto;
   }
   .room-search form {
     width: 100%;
@@ -280,6 +280,63 @@
       margin-top: 50px;
       font-size: 1.3em;
     }
+  }
+
+  // room create
+
+  .room-create-form {
+    width: 100%;
+    height: 100%;
+  }
+  .room-create-form form {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .room-title-form {
+    display: block;
+    margin: 2em auto 2em auto;
+    border: 0;
+    width: 75%;
+    font-size: 1em;
+    height: 2em;
+    line-height: 1em;
+    border: 1px solid gray;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+  }
+  .room-tags-form {
+    display: block;
+    margin: 2em auto 2em auto;
+    border: 0;
+    width: 30em;
+    font-size: 1em;
+    height: 15em;
+    line-height: 1em;
+    border: 1px solid gray;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .room-create-button {
+    display: block;
+    margin: 5em auto 2em auto;
+    font-size: 1.5em;
+    width: 60%;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background: white;
+  }
+  .room-create-button:hover {
+    background: gray;
+    color: white;
+    cursor: pointer;
   }
 
 }

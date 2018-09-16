@@ -1,2 +1,15 @@
-<h1>Rooms#new</h1>
-<p>Find me in app/views/rooms/new.html.erb</p>
+<% provide(:title, "ROOM Create") %>
+
+<div class="main-page-select">
+  <div class="over-scroll">
+    <div class="room-create-form">
+    <%= form_tag(rooms_path, method: :post) do %>
+      <div class="form-label"><p>ROOM TITLE</p></div>
+      <%= text_field :name, '', class: 'room-title-form', maxlength: 50 %>
+      <div class="form-label"><p>TAGS</p></div>
+      <%= text_area :room_tags, '', class: 'room-tags-form' %>
+      <%= submit_tag "CREATE", class: "room-create-button" %>
+    <% end %>
+    </div>
+  </div>
+</div>
