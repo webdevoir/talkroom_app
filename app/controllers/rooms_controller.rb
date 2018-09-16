@@ -8,8 +8,11 @@ class RoomsController < ApplicationController
     if !logged_in?
       new_user_setting
       log_in @user
-    else
+    elsif User.exists?(id: current_user.id)
       @user = current_user
+    else
+      new_user_setting
+      log_in @user
     end
   end
 

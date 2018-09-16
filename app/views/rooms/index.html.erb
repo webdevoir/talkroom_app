@@ -3,23 +3,22 @@
 <div class="main-page-select">
   <div class="over-scroll">
     <div class="user-name">
-      <form>
-        <div class="form-label"><p>User Name</p></div>
-        <input class="text-input-form"type="text" name="user_name" maxlength="10" value="<%= @user.name %>">
-      </form>
+      <div class="user-name-value"><p>NAME： <%= @user.name %></p></div>
+      <%= link_to edit_user_path(@user.id), class: 'link-none' do %>
+        <div class="search-button">CHANGE</div>
+      <% end %>
     </div>
-
     <div class="room-search">
       <form>
-        <div class="form-label"><p>ROOM search</p></div>
+        <div class="form-label"><p>ROOM SEARCH</p></div>
         <input class="text-input-form"type="text" name="rooms_search">
-        <div class="search-button">search</div>
-        <div class="search-button">create</div>
+        <div class="search-button">SEARCH</div>
+        <div class="search-button">CREATE</div>
       </form>
     </div>
 
     <div class="room-content">
-      <div class="room-content-title"><p>Active Room</p></div>
+      <div class="room-content-title"><p>ACTIVE ROOM</p></div>
       <div class="active-room">
         <div class="rooms-info">
           <p>room title</p>

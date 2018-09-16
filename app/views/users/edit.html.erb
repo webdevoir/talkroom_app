@@ -1,0 +1,10 @@
+<% provide(:title, "User name edit") %>
+<div class="box_area">
+  <div class="box">
+    <p class="page-title">USER NAME</p>
+    <%= form_for @user, url: user_path(@user.id) do |f| %>
+      <%= f.text_field :name, class: 'text-input-form', maxlength: 15 %>
+      <%= f.submit "CHANGE", class: "search-button-user-name" %>
+    <% end %>
+  </div>
+</div>

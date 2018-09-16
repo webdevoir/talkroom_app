@@ -196,9 +196,8 @@
     height: 25%;
     margin: auto;
   }
-  .user-name form {
-    width: 100%;
-    height: 100%;
+  .user-name-value {
+    margin: auto;
     text-align: center;
   }
   .form-label {
@@ -212,7 +211,7 @@
   }
   .room-search {
     width: 70%;
-    margin: auto auto 5% auto;
+    margin: 10% auto 5% auto;
   }
   .room-search form {
     width: 100%;
@@ -234,6 +233,10 @@
     background: gray;
     color: white;
     cursor: pointer;
+  }
+  .link-none {
+    text-decoration: none;
+    color: black;
   }
 
   .room-content {
