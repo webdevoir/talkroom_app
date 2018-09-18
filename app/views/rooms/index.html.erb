@@ -13,30 +13,16 @@
         <div class="form-label"><p>ROOM SEARCH</p></div>
         <input class="text-input-form"type="text" name="rooms_search">
         <div class="search-button">SEARCH</div>
-        <div class="search-button">CREATE</div>
+        <%= link_to new_room_path, class: 'link-none' do %>
+          <div class="search-button">CREATE</div>
+        <% end %>
       </form>
     </div>
 
     <div class="room-content">
       <div class="room-content-title"><p>ACTIVE ROOM</p></div>
       <div class="active-room">
-        <div class="rooms-info">
-          <p>room title</p>
-          <p>room people</p>
-          <p>tag tag tag tag tag tag tag</p>
-        </div>
-
-        <div class="rooms-info">
-          <p>room title</p>
-          <p>room people</p>
-          <p>tag tag tag tag tag tag tag</p>
-        </div>
-
-        <div class="rooms-info">
-          <p>room title</p>
-          <p>room people</p>
-          <p>tag tag tag tag tag tag tag</p>
-        </div>
+        <%= render @rooms %>
       </div>
     </div>
   </div>

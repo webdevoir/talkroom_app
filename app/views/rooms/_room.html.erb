@@ -1,0 +1,10 @@
+<%= link_to room_path(room.id), class: 'link-none' do %>
+  <div class="active-room-content">
+    <div class="active-room-title"><p><%= room.name %> Say:<%= Message.where( room_id: room.id).count %></p></div>
+    <% @room_tags.each do |room_tag| %>
+      <% if room_tag.room_id == room.id %>
+        <p class="active-room-tag"><%= room_tag.name %></p>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

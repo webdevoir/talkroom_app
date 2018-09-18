@@ -14,6 +14,8 @@ class RoomsController < ApplicationController
       new_user_setting
       log_in @user
     end
+    @rooms = Room.all
+    @room_tags = RoomTag.all
   end
 
   def new

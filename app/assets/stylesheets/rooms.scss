@@ -3,58 +3,58 @@
   // room page
 
   @media only screen and (max-width: 480px) {
-      .main-view {
-          width: 100%;
-          height: 100%;
-          margin: 0 auto;
-          border: 1px solid gray;
-          position: relative;
-      }
-      .main-page-select {
-        width: 100%;
-        height: 100%;
-        margin: 0 auto;
-        border: 1px solid gray;
-        position: relative;
-      }
-      .text-input-area {
-        border: 0;
-        width: 50%;
-        font-size: 0.85em;
-        height: 3em;
-        line-height: 1.5em;
-        border: 1px solid gray;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-      }
+    .main-view {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      border: 1px solid gray;
+      position: relative;
+    }
+    .main-page-select {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      border: 1px solid gray;
+      position: relative;
+    }
+    .text-input-area {
+      border: 0;
+      width: 50%;
+      font-size: 0.85em;
+      height: 3em;
+      line-height: 1.5em;
+      border: 1px solid gray;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
 
   }
 
   .nav {
-      display: table;
-      border-collapse: separate;
-      border-spacing: 20px 0;
-      width: 100%;
-      background-color: #333;
-      margin: 0;
-      position: sticky;
-      position: absolute;
-      z-index: 2;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 20px 0;
+    width: 100%;
+    background-color: #333;
+    margin: 0;
+    position: sticky;
+    position: absolute;
+    z-index: 2;
   }
   .back-button {
-      display: table-cell;
-      text-align: left;
-      height: 2em;
-      width: 2.5em;
-      padding: 0;
+    display: table-cell;
+    text-align: left;
+    height: 2em;
+    width: 2.5em;
+    padding: 0;
   }
   .back-button p {
-      margin: 0;
-      font-size: 1em;
-      line-height: 2em;
-      color: #fff;
-      text-align: center;
+    margin: 0;
+    font-size: 1em;
+    line-height: 2em;
+    color: #fff;
+    text-align: center;
   }
   .back-button p:hover {
     background: #fff;
@@ -65,21 +65,21 @@
     text-decoration: none;
   }
   .room-title {
-      display: table-cell;
-      text-align: center;
-      height: 2em;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      color: #fff;
-      font-size: 1em;
-      overflow: hidden;
+    display: table-cell;
+    text-align: center;
+    height: 2em;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: 1em;
+    overflow: hidden;
   }
   .room-title p {
-      width: 33em;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+    width: 33em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   @media only screen and (max-width: 700px) {
     .room-title p {
@@ -87,96 +87,96 @@
     }
   }
   .menu-button {
-      display: table-cell;
-      text-align: right;
-      height: 2em;
-      width: 2.5em;
-      padding: 0;
+    display: table-cell;
+    text-align: right;
+    height: 2em;
+    width: 2.5em;
+    padding: 0;
   }
   .menu-button p {
-      margin: 0;
-      font-size: 1em;
-      line-height: 2em;
-      color: #fff;
+    margin: 0;
+    font-size: 1em;
+    line-height: 2em;
+    color: #fff;
   }
 
 
   .main-view {
-      max-width: 700px;
-      height: 100%;
-      margin: 0 auto;
-      border: 1px solid gray;
-      position: relative;
+    max-width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    border: 1px solid gray;
+    position: relative;
   }
   .messages {
-      height: 100%;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: scroll;
-      position: absolute;
-      z-index: 1;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    position: absolute;
+    z-index: 1;
   }
   .chat-view-area {
     padding: 80px 5px 50px 5px;
   }
   .chat-box {
-      width: 100%;
-      height: auto;
-      overflow: hidden;
-      margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 20px;
   }
   .chat-area {
-      width: 100%;
-      float: left;
+    width: 100%;
+    float: left;
   }
   .time-id-info {
-      margin: 0px;
-      font-size: 65%;
+    margin: 0px;
+    font-size: 65%;
   }
   .time-id-info-mine {
-      margin: 0 0 0 auto;
-      font-size: 65%;
-      text-align: right;
+    margin: 0 0 0 auto;
+    font-size: 65%;
+    text-align: right;
   }
   .time-id-info-mine p {
-      display: inline;
-      margin: 0;
+    display: inline;
+    margin: 0;
   }
   .chat-balloon-line-mine {
     text-align: right;
   }
   .chat-balloon {
-      display: inline-block;
-      padding: 5px 5px;
-      margin-left: 0px;
-      margin-top: 0px;
-      border: 1px solid gray;
-      border-radius: 5px;
-      max-width: 70%;
-      word-wrap: break-word;
+    display: inline-block;
+    padding: 5px 5px;
+    margin-left: 0px;
+    margin-top: 0px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    max-width: 70%;
+    word-wrap: break-word;
   }
   .chat-balloon pre {
-      width: 100%;
-      margin: 5px;
-      white-space: pre-wrap;
+    width: 100%;
+    margin: 5px;
+    white-space: pre-wrap;
   }
   .chat-balloon-mine {
-      display: inline-block;
-      padding: 5px 5px;
-      margin: 0 0 0 auto;
-      border: 1px solid gray;
-      border-radius: 5px;
-      max-width: 70%;
-      word-wrap: break-word;
-      background: #333;
+    display: inline-block;
+    padding: 5px 5px;
+    margin: 0 0 0 auto;
+    border: 1px solid gray;
+    border-radius: 5px;
+    max-width: 70%;
+    word-wrap: break-word;
+    background: #333;
   }
   .chat-balloon-mine pre {
-      width: 100%;
-      margin: 5px;
-      white-space: pre-wrap;
-      text-align: left;
-      color: #fff;
+    width: 100%;
+    margin: 5px;
+    white-space: pre-wrap;
+    text-align: left;
+    color: #fff;
   }
 
   .send-form {
@@ -320,30 +320,36 @@
 
   .active-room {
     width: 100%;
-    height: 500px;
-    display: flex;
   }
-  @media only screen and (max-width: 800px) {
-    .active-room {
-      height: 1700px;
-      display: block;
-    }
-  }
-
-  .rooms-info {
-    width: 250px;
-    height: 400px;
+  .active-room-content {
+    width: 80%;
+    margin: 1em auto 1em auto;
     border: 1px solid gray;
-    margin: auto;
-    font-size: 1em;
+    border-radius: 3px;
+    padding: 1em;
   }
-  @media only screen and (max-width: 800px) {
-    .rooms-info {
-      width: 350px;
-      height: 500px;
-      margin-top: 50px;
-      font-size: 1.3em;
-    }
+  .active-room-content:hover {
+    background: #333;
+    color: #fff
+  }
+  .active-room-title {
+    width: 95%;
+    margin: 0 auto 0.5em auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .active-room-title p {
+    font-size: 1.2em;
+    display: inline;
+    border-bottom: solid 1px gray;
+  }
+  .active-room-tag {
+    display: inline;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 0.1em;
+    margin: 0.3em;
   }
 
   // room create

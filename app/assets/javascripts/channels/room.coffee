@@ -28,9 +28,9 @@ $(document).on 'turbolinks:load', ->
           event.target.value = ''
           event.preventDefault()
 
-    $("#send-button").click ->
-      App.room.speak $("#message_textarea").val()
-      $("#message_textarea").val('')
-      event.preventDefault()
+  $("#send-button").click ->
+    App.room.speak $("#message_textarea").val()
+    $("#message_textarea").val('')
+    event.preventDefault()
 
 
