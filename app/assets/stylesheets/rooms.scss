@@ -134,6 +134,18 @@
       margin: 0px;
       font-size: 65%;
   }
+  .time-id-info-mine {
+      margin: 0 0 0 auto;
+      font-size: 65%;
+      text-align: right;
+  }
+  .time-id-info-mine p {
+      display: inline;
+      margin: 0;
+  }
+  .chat-balloon-line-mine {
+    text-align: right;
+  }
   .chat-balloon {
       display: inline-block;
       padding: 5px 5px;
@@ -148,6 +160,23 @@
       width: 100%;
       margin: 5px;
       white-space: pre-wrap;
+  }
+  .chat-balloon-mine {
+      display: inline-block;
+      padding: 5px 5px;
+      margin: 0 0 0 auto;
+      border: 1px solid gray;
+      border-radius: 5px;
+      max-width: 70%;
+      word-wrap: break-word;
+      background: #333;
+  }
+  .chat-balloon-mine pre {
+      width: 100%;
+      margin: 5px;
+      white-space: pre-wrap;
+      text-align: left;
+      color: #fff;
   }
 
   .send-form {
