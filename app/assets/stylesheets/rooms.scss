@@ -45,26 +45,61 @@
   .back-button {
       display: table-cell;
       text-align: left;
+      height: 2em;
+      width: 2.5em;
+      padding: 0;
+  }
+  .back-button p {
+      margin: 0;
+      font-size: 1em;
+      line-height: 2em;
       color: #fff;
-      height: 50px;
-      line-height: 50px;
-      margin-left: 20px;
+      text-align: center;
+  }
+  .back-button p:hover {
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+  }
+  .back-button a {
+    text-decoration: none;
   }
   .room-title {
       display: table-cell;
       text-align: center;
+      height: 2em;
+      width: 100%;
+      padding: 0;
+      margin: 0;
       color: #fff;
-      height: 50px;
-      line-height: 50px;
+      font-size: 1em;
+      overflow: hidden;
+  }
+  .room-title p {
+      width: 33em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
+  @media only screen and (max-width: 700px) {
+    .room-title p {
+      width: 17.5em;
+    }
   }
   .menu-button {
       display: table-cell;
       text-align: right;
-      color: #fff;
-      height: 50px;
-      line-height: 50px;
-      margin-right: 20px;
+      height: 2em;
+      width: 2.5em;
+      padding: 0;
   }
+  .menu-button p {
+      margin: 0;
+      font-size: 1em;
+      line-height: 2em;
+      color: #fff;
+  }
+
 
   .main-view {
       max-width: 700px;

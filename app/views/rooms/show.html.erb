@@ -8,15 +8,19 @@
 </div>
 
 <div class="nav">
-  <p class="back-button">◁</p>
-  <p class="room-title">title(10)</p>
-  <p class="menu-button">▽</p>
+  <div class="back-button">
+    <%= link_to rooms_path do %>
+      <p>Back</p>
+    <% end %>
+  </div>
+  <div class="room-title"><p><%= @room.name %></p></div>
+  <div class="menu-button"><p>    </p></div>
 </div>
 
 <form class="send-form">
   <div class="send-form-position">
-    <textarea data-behavior="room_speaker" class="text-input-area" wrap="hard"></textarea>
-    <a class="chat-menu-button" id="send-button">send</a>
+    <textarea data-behavior="room_speaker" class="text-input-area" wrap="hard" placeholder="Shift + Enter" id="message_textarea"></textarea>
+    <a class="chat-menu-button" data-behavior="room_speaker_button" id="send-button">Say</a>
     <a class="chat-menu-button">＋</a>
     <a class="chat-menu-button" id="scroll_down_button">⬇</a>
   </div>
