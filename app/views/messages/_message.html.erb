@@ -1,4 +1,4 @@
-<div class="chat-box">
+<div class="chat-box" id='<%= message.user_id %>'>
   <div class="chat-area">
 
     <% if message.user_id == (session[:user_id] || current_user) %>
@@ -11,9 +11,13 @@
         </div>
       </div>
     <% else %>
-      <p class="time-id-info"><%= "#{message.user_name} #{simple_time(message.created_at)}" %></p>
-      <div class="chat-balloon">
-        <pre id="msg_id"><%= message.content %></pre>
+      <div class="time-id-info">
+        <p><%= "#{message.user_name} #{simple_time(message.created_at)}" %></p>
+      </div>
+      <div class="chat-balloon-line">
+        <div class="chat-balloon">
+          <pre id="msg_id"><%= message.content %></pre>
+        </div>
       </div>
     <% end %>
 
