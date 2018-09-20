@@ -10,5 +10,20 @@ class RoomChannel < ApplicationCable::Channel
   def speak(data)
     Message.create(content: data['message'], user_id: current_user.id,
       user_name: current_user.name, room: Room.find(params['room_id']))
+    user_update
+    room_update
   end
+
+  private
+    def user_update
+      user = current_user
+      user.touch
+      user.save
+    end
+
+    def room_update
+      room = Room.find(params['room_id'])
+      room.touch
+      room.save
+    end
 end
