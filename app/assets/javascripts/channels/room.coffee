@@ -5,9 +5,9 @@
   #disconnected: ->
     # Called when the subscription has been terminated by the server
 
-$(document).on 'turbolinks:load', ->
+#$(document).on 'turbolinks:load', ->
+$(document).ready ->
   messages = $('#messages')
-  #if $('#messages').length > 0
 
   App.room = App.cable.subscriptions.create { channel: "RoomChannel", room_id: messages.data('room_id') },
 
@@ -21,16 +21,14 @@ $(document).on 'turbolinks:load', ->
     speak: (message) ->
       @perform 'speak', message: message
 
-    $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
-      if event.shiftKey
-        if event.keyCode is 13 # return = send
-          App.room.speak event.target.value
-          event.target.value = ''
-          event.preventDefault()
+  $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
+    if event.shiftKey
+      if event.keyCode is 13 # return = send
+        App.room.speak event.target.value
+        event.target.value = ''
+        event.preventDefault()
 
   $("#send-button").click ->
     App.room.speak $("#message_textarea").val()
     $("#message_textarea").val('')
     event.preventDefault()
-
-
