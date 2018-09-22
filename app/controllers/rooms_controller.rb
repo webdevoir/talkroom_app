@@ -42,9 +42,6 @@ class RoomsController < ApplicationController
     redirect_to room_path(@room.id)
   end
 
-  def destroy
-  end
-
   private
 
     def room_tag_setting

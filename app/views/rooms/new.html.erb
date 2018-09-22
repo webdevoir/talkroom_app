@@ -7,7 +7,7 @@
       <div class="form-label"><p>ROOM TITLE</p></div>
       <%= text_field :name, '', class: 'room-title-form', maxlength: 50 %>
       <div class="form-label"><p>TAGS</p></div>
-      <%= text_area :room_tags, '', class: 'room-tags-form' %>
+      <%= text_area :room_tags, '', class: 'room-tags-form', placeholder: "ex. #TALK#ROOM" %>
       <%= submit_tag "CREATE", class: "room-create-button" %>
     <% end %>
     </div>

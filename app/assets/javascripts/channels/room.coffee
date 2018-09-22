@@ -15,14 +15,14 @@ $(document).ready ->
       $('#messages').append data['message']
       sending_message = $(".chat-box:last-child")
       current_user_id = $('body').attr('id')
-      if (sending_message.attr('id') == current_user_id)
-        sending_message.find(".time-id-info").attr("class", "time-id-info-mine")
-        sending_message.find(".chat-balloon-line").attr("class", "chat-balloon-line-mine")
-        sending_message.find(".chat-balloon").attr("class", "chat-balloon-mine")
       scrollPosition = document.getElementById("chat-scroll").scrollTop
       scrollHeight = document.getElementById("chat-scroll").scrollHeight;
       if (scrollHeight - scrollPosition) < 1000
         document.getElementById("chat-scroll").scrollTop = scrollHeight;
+      if (sending_message.attr('id') == current_user_id)
+        sending_message.find(".time-id-info").attr("class", "time-id-info-mine")
+        sending_message.find(".chat-balloon-line").attr("class", "chat-balloon-line-mine")
+        sending_message.find(".chat-balloon").attr("class", "chat-balloon-mine")
 
     speak: (message) ->
       @perform 'speak', message: message
