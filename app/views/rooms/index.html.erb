@@ -10,9 +10,11 @@
     </div>
     <div class="room-search">
       <form>
-        <div class="form-label"><p>ROOM SEARCH</p></div>
-        <input class="text-input-form"type="text" name="rooms_search">
-        <div class="search-button">SEARCH</div>
+        <%= form_tag rooms_path, method: 'get' do %>
+          <div class="form-label"><p>ROOM SEARCH</p></div>
+          <%= text_field_tag :search, params[:search], class: "text-input-form" %>
+          <%= submit_tag "SEARCH", name: nil, class: "search-button link-none" %>
+        <% end %>
         <%= link_to new_room_path, class: 'link-none' do %>
           <div class="search-button">CREATE</div>
         <% end %>
@@ -20,7 +22,7 @@
     </div>
 
     <div class="room-content">
-      <div class="room-content-title"><p>ACTIVE ROOM</p></div>
+      <div class="room-content-title"><p><%= @room_heading %></p></div>
       <div class="active-room">
         <%= render @rooms %>
       </div>

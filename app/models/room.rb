@@ -6,4 +6,5 @@ class Room < ApplicationRecord
     yesterday = Date.today.yesterday
     Room.destroy_all(updated_at: yesterday.in_time_zone.all_day)
   end
+
 end

@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
       new_user_setting
       log_in @user
     end
-    @rooms = Room.all
+    room_search
     @room_tags = RoomTag.all
   end
 
@@ -53,6 +53,18 @@ class RoomsController < ApplicationController
       @room = Room.create(name: "ROOM")
       @room.name = "ROOM#{@room.id}"
       @room.save
+    end
+
+    def room_search
+      if params[:search] == nil || params[:search] == ''
+        @rooms = Room.all
+        @room_heading = "ACTIVE ROOM"
+      else
+        words = params[:search].to_s.gsub(/(?:[[:space:]%_])+/, " ").split(" ")
+        query = (["name LIKE ?"] * words.size).join(" AND ")
+        @rooms = Room.where(query, *words.map{|w| "%#{w}%"})
+        @room_heading = "SEARCH RESULT"
+      end
     end
 
 end
