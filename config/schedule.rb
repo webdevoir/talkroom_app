@@ -13,7 +13,3 @@ end
 every 1.month do
   runner "User.auto_user_delete"
 end
-
-every 1.minute do
-  runner "User.test"
-end
