@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :messages
+  has_many :chats
   validates :name, presence: true, length: { maximum: 15 }
 
   def auto_user_delete

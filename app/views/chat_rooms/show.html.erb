@@ -1,0 +1,28 @@
+<% provide(:title, "RANDUM ROOM") %>
+<div class="main-view">
+
+<div id="chat-scroll" class="chats">
+  <div id="chats", data-chat_room_id="<%= @chat_room.id %>" class="chat-view-area">
+    <%= render @chats %>
+  </div>
+</div>
+
+<div class="nav">
+  <div class="back-button">
+    <%= link_to rooms_path do %>
+      <p>Back</p>
+    <% end %>
+  </div>
+  <div class="room-title"><p>RANDUM ROOM</p></div>
+  <div class="menu-button"><p>    </p></div>
+</div>
+
+<form class="send-form">
+  <div class="send-form-position">
+    <textarea data-behavior="chat_room_speaker" class="text-input-area" wrap="hard" placeholder="Shift + Enter" id="chat_textarea"></textarea>
+    <a class="chat-menu-button" data-behavior="chat_room_speaker_button" id="send-button">Say</a>
+    <a class="chat-menu-button">＋</a>
+    <a class="chat-menu-button" id="scroll_down_button">⬇</a>
+  </div>
+</form>
+</div>
