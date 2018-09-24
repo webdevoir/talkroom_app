@@ -21,6 +21,9 @@ class ChatRoomChannel < ApplicationCable::Channel
       current_chat_room.user2_id = nil
     end
     current_chat_room.save
+    if current_chat_room.user1_id == nil && current_chat_room.user2_id == nil
+      current_chat_room.destroy
+    end
   end
 
   def speak(data)
