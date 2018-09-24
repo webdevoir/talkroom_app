@@ -1,10 +1,26 @@
 class ChatRoomChannel < ApplicationCable::Channel
   def subscribed
     stream_from "chat_room_channel_#{params['chat_room_id']}"
+    current_chat_room = ChatRoom.find(params['chat_room_id'])
+    if current_chat_room.user1_id.nil?
+      current_chat_room.user1_id = current_user.id
+      current_chat_room.save
+    elsif current_chat_room.user2_id.nil?
+      current_chat_room.user2_id = current_user.id
+      current_chat_room.save
+    else
+      redirect_to rooms_path
+    end
   end
 
   def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
+    current_chat_room = ChatRoom.find(params['chat_room_id'])
+    if current_chat_room.user1_id == current_user.id
+      current_chat_room.user1_id = nil
+    elsif current_chat_room.user2_id == current_user.id
+      current_chat_room.user2_id = nil
+    end
+    current_chat_room.save
   end
 
   def speak(data)
