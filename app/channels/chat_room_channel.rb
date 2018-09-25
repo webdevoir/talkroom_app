@@ -11,6 +11,7 @@ class ChatRoomChannel < ApplicationCable::Channel
     else
       redirect_to rooms_path
     end
+    greet
   end
 
   def unsubscribed
@@ -24,6 +25,7 @@ class ChatRoomChannel < ApplicationCable::Channel
     if current_chat_room.user1_id == nil && current_chat_room.user2_id == nil
       current_chat_room.destroy
     end
+    farewell_greet
   end
 
   def speak(data)
@@ -37,6 +39,16 @@ class ChatRoomChannel < ApplicationCable::Channel
       user = current_user
       user.touch
       user.save
+    end
+
+    def greet
+      Chat.create(content: "#{current_user.name}が入室しました。", user_id: current_user.id,
+      user_name: current_user.name, chat_room: ChatRoom.find(params['chat_room_id']))
+    end
+
+    def farewell_greet
+      Chat.create(content: "#{current_user.name}が退出しました。", user_id: current_user.id,
+      user_name: current_user.name, chat_room: ChatRoom.find(params['chat_room_id']))
     end
 
 end
