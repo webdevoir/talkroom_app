@@ -5,10 +5,7 @@ class RoomsController < ApplicationController
   end
 
   def index
-    if !logged_in?
-      new_user_setting
-      log_in @user
-    elsif User.exists?(id: current_user.id)
+    if logged_in? && User.exists?(id: current_user.id)
       @user = current_user
       @user.touch
       @user.save
