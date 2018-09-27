@@ -228,6 +228,30 @@
     cursor: pointer;
   }
 
+  .image-send-form {
+    position: sticky;
+    position: absolute;
+    bottom: 65px;
+    right: 0;
+    z-index: 3;
+    background-color: white;
+    text-align: center;
+    height: 2em;
+    margin-right: 0.25em;
+    display: none;
+  }
+  .image-send-form p {
+    display: inline;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 0.1em;
+  }
+  .image-send-form p:hover {
+    background: gray;
+    color: white;
+    cursor: pointer;
+  }
+
   // room select page
 
   .main-page-select {
