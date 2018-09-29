@@ -8,8 +8,14 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    Message.create(content: data['message'], user_id: current_user.id,
+    puts data['message']
+    message = Message.new(content: data['message'], user_id: current_user.id,
       user_name: current_user.name, room: Room.find(params['room_id']))
+    if data['file_uri']
+      message.attachment_name = data['original_name']
+      message.attachment_data_uri = data['file_uri']
+    end
+    message.save
     user_update
     room_update
   end

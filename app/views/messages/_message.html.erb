@@ -7,7 +7,20 @@
       </div>
       <div class="chat-balloon-line-mine">
         <div class="chat-balloon-mine">
-          <pre id="msg_id"><%= message.content %></pre>
+          <% if message.content.present? && message.attachment_data.nil? %>
+            <pre id="msg_id"><%= message.content %></pre>
+          <% elsif message.content.empty? && message.attachment_data.present? %>
+            <pre id="msg_id" class="image-link">
+              <%= link_to "View #{message.attachment.original_filename}",
+                message.attachment.url, target: '_blank' %>
+            </pre>
+          <% elsif message.content.present? && message.attachment_data.present? %>
+            <pre id="msg_id" class="image-link">
+              <pre><%= message.content %></pre><br>
+              <%= link_to "View #{message.attachment.original_filename}",
+                message.attachment.url, target: '_blank' %>
+            </pre>
+          <% end %>
         </div>
       </div>
     <% else %>
@@ -16,7 +29,20 @@
       </div>
       <div class="chat-balloon-line">
         <div class="chat-balloon">
-          <pre id="msg_id"><%= message.content %></pre>
+          <% if message.content.present? && message.filename.nil? %>
+            <pre id="msg_id"><%= message.content %></pre>
+          <% elsif message.content.empty? && message.attachment_data.present? %>
+            <pre id="msg_id">
+              <%= link_to "View #{message.attachment.original_filename}",
+                message.attachment.url, target: '_blank' %>
+            </pre>
+          <% elsif message.content.present? && message.attachment_data.present? %>
+            <pre id="msg_id">
+              <pre><%= message.content %></pre><br>
+              <%= link_to "View #{message.attachment.original_filename}",
+                message.attachment.url, target: '_blank' %>
+            </pre>
+          <% end %>
         </div>
       </div>
     <% end %>

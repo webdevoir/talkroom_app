@@ -17,10 +17,14 @@
   <div class="menu-button"><p>    </p></div>
 </div>
 
-<div class="image-send-form">
-  <input type="file"/>
-  <p id="image-send-button">Send</p>
-</div>
+
+<%= form_with url: '#', html: {id: 'new-message'} do |f| %>
+  <div class="image-send-form">
+    <%= f.file_field :attachment, id: 'message-attachment' %>
+    <br>
+    <small>Only PNG JPG GIF </small>
+  </div>
+<% end %>
 
 <form class="send-form">
   <div class="send-form-position">

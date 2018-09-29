@@ -23,17 +23,38 @@ $(document).ready ->
         sending_message.find(".chat-balloon").attr("class", "chat-balloon-mine")
         document.getElementById("chat-scroll").scrollTop = scrollHeight;
 
-    speak: (message) ->
-      @perform 'speak', message: message
+    speak: (message, file_uri, original_name) ->
+      @perform 'speak', message: message, file_uri: file_uri, original_name: original_name
 
   $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
     if event.shiftKey
       if event.keyCode is 13 # return = send
-        App.room.speak event.target.value
+        if $('#message-attachment').get(0).files.length > 0
+          reader = new FileReader()
+          file_name = $('#message-attachment').get(0).files[0].name
+          message_content = $("#message_textarea").val()
+          reader.addEventListener "loadend", ->
+            App.room.speak message_content, reader.result, file_name
+
+          reader.readAsDataURL $('#message-attachment').get(0).files[0]
+        else
+          App.room.speak event.target.value
         event.target.value = ''
+        $('#message-attachment').val('')
         event.preventDefault()
 
   $("#send-button").click ->
-    App.room.speak $("#message_textarea").val()
+    if $('#message-attachment').get(0).files.length > 0
+      reader = new FileReader()
+      file_name = $('#message-attachment').get(0).files[0].name
+      message_content = $("#message_textarea").val()
+      reader.addEventListener "loadend", ->
+        App.room.speak message_content, reader.result, file_name
+
+      reader.readAsDataURL $('#message-attachment').get(0).files[0]
+    else
+      App.room.speak $("#message_textarea").val()
     $("#message_textarea").val('')
+    $('#message-attachment').val('')
     event.preventDefault()
+
