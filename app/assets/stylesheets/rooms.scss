@@ -120,6 +120,15 @@
   .chat-view-area {
     padding: 80px 5px 50px 5px;
   }
+
+  .reply-message {
+    font-size: 0.85em;
+    line-height: 1.5em;
+    padding: 0.4em;
+    border: 1px solid skyblue;
+    border-radius: 7px;
+    display: none;
+  }
   .chat-box {
     width: 100%;
     height: auto;
@@ -146,6 +155,15 @@
     display: inline;
     margin: 0;
   }
+  .time-stamp a {
+    transition: 0.5s;
+    color: black;
+  }
+  .time-stamp a:hover {
+    color: skyblue;
+    cursor: pointer;
+  }
+
   .chat-balloon-line-mine {
     text-align: right;
   }
@@ -441,4 +459,3 @@
   }
 
 }
-

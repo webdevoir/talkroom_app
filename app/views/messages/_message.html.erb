@@ -1,47 +1,48 @@
+<p class="reply-message"></p>
 <div class="chat-box" id='<%= message.user_id %>'>
   <div class="chat-area">
 
     <% if message.user_id == (session[:user_id] || current_user) %>
       <div class="time-id-info-mine">
-        <p><%= "#{message.user_name} #{simple_time(message.created_at)}" %></p>
+        <p class="time-stamp"><%= "#{message.user_name} #{simple_time(message.created_at)}" %></p>
       </div>
       <div class="chat-balloon-line-mine">
         <div class="chat-balloon-mine">
           <% if message.content.empty? && message.attachment_data.present? %>
-            <pre id="msg_id" class="image-link">
+            <pre id="msg_id" class="image-link msg_id">
               <%= link_to "View #{message.attachment.original_filename}",
                 message.attachment.url, target: '_blank' %>
             </pre>
           <% elsif message.content.present? && message.attachment_data.present? %>
-            <pre id="msg_id" class="image-link">
+            <pre id="msg_id" class="image-link msg_id">
               <pre><%= message.content %></pre><br>
               <%= link_to "View #{message.attachment.original_filename}",
                 message.attachment.url, target: '_blank' %>
             </pre>
           <% else %>
-            <pre id="msg_id"><%= message.content %></pre>
+            <pre id="msg_id" class="msg_id"><%= message.content %></pre>
           <% end %>
         </div>
       </div>
     <% else %>
       <div class="time-id-info">
-        <p><%= "#{message.user_name} #{simple_time(message.created_at)}" %></p>
+        <p class="time-stamp"><%= "#{message.user_name} #{simple_time(message.created_at)}" %></p>
       </div>
       <div class="chat-balloon-line">
         <div class="chat-balloon">
           <% if message.content.empty? && message.attachment_data.present? %>
-            <pre id="msg_id">
+            <pre id="msg_id" class="msg_id">
               <%= link_to "View #{message.attachment.original_filename}",
                 message.attachment.url, target: '_blank' %>
             </pre>
           <% elsif message.content.present? && message.attachment_data.present? %>
-            <pre id="msg_id">
+            <pre id="msg_id" class="msg_id">
               <pre><%= message.content %></pre><br>
               <%= link_to "View #{message.attachment.original_filename}",
                 message.attachment.url, target: '_blank' %>
             </pre>
           <% else %>
-            <pre id="msg_id"><%= message.content %></pre>
+            <pre id="msg_id" class="msg_id"><%= message.content %></pre>
           <% end %>
         </div>
       </div>

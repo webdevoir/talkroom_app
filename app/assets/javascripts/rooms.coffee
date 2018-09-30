@@ -1,4 +1,10 @@
 document.addEventListener 'DOMContentLoaded', (->
+  messages_count = $('.time-stamp').length
+  if messages_count > 0
+    for i in [1..messages_count]
+      time_stamp = $('.time-stamp').eq(i - 1)
+      time_stamp.wrapInner('<a>' + i + '. </a>')
+      time_stamp.attr('id', i)
   document.getElementById('scroll_down_button').addEventListener 'click', scroll_down), false
 
 scroll_down = ->
