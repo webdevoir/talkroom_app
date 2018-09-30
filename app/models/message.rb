@@ -1,6 +1,5 @@
 class Message < ApplicationRecord
   include AttachmentUploader[:attachment]
-  #validates :body, presence: true, unless: :attachment_data
   after_create_commit { MessageBroadcastJob.perform_later self }
   belongs_to :user
   belongs_to :room

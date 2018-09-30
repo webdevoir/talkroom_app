@@ -7,9 +7,7 @@
       </div>
       <div class="chat-balloon-line-mine">
         <div class="chat-balloon-mine">
-          <% if message.content.present? && message.attachment_data.nil? %>
-            <pre id="msg_id"><%= message.content %></pre>
-          <% elsif message.content.empty? && message.attachment_data.present? %>
+          <% if message.content.empty? && message.attachment_data.present? %>
             <pre id="msg_id" class="image-link">
               <%= link_to "View #{message.attachment.original_filename}",
                 message.attachment.url, target: '_blank' %>
@@ -20,6 +18,8 @@
               <%= link_to "View #{message.attachment.original_filename}",
                 message.attachment.url, target: '_blank' %>
             </pre>
+          <% else %>
+            <pre id="msg_id"><%= message.content %></pre>
           <% end %>
         </div>
       </div>
@@ -29,9 +29,7 @@
       </div>
       <div class="chat-balloon-line">
         <div class="chat-balloon">
-          <% if message.content.present? && message.filename.nil? %>
-            <pre id="msg_id"><%= message.content %></pre>
-          <% elsif message.content.empty? && message.attachment_data.present? %>
+          <% if message.content.empty? && message.attachment_data.present? %>
             <pre id="msg_id">
               <%= link_to "View #{message.attachment.original_filename}",
                 message.attachment.url, target: '_blank' %>
@@ -42,6 +40,8 @@
               <%= link_to "View #{message.attachment.original_filename}",
                 message.attachment.url, target: '_blank' %>
             </pre>
+          <% else %>
+            <pre id="msg_id"><%= message.content %></pre>
           <% end %>
         </div>
       </div>
