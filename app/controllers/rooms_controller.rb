@@ -62,7 +62,12 @@ class RoomsController < ApplicationController
       else
         words = params[:search].to_s.gsub(/(?:[[:space:]%_])+/, " ").split(" ")
         query = (["name LIKE ?"] * words.size).join(" AND ")
-        @rooms = Room.where(query, *words.map{|w| "%#{w}%"})
+        @rooms_tag = RoomTag.where(query, *words.map{|w| "%#{w}%"})
+        @rooms_id = []
+        @rooms_tag.each do |room_tag|
+          @rooms_id.push(room_tag.room_id)
+        end
+        @rooms = Room.where(query, *words.map{|w| "%#{w}%"}).or(Room.where(id: @rooms_id))
         @room_heading = "SEARCH RESULT"
       end
     end
