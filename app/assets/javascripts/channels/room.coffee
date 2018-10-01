@@ -25,7 +25,7 @@ $(document).ready ->
         sending_message.find(".time-id-info").attr("class", "time-id-info-mine")
         sending_message.find(".chat-balloon-line").attr("class", "chat-balloon-line-mine")
         sending_message.find(".chat-balloon").attr("class", "chat-balloon-mine")
-        sending_message.find("#msg_id").attr("class", "image-link")
+        sending_message.find("#msg_id").attr("class", "msg_id")
         document.getElementById("chat-scroll").scrollTop = scrollHeight;
       if ( (scrollHeight - scrollPosition) < 1000 )
         document.getElementById("chat-scroll").scrollTop = scrollHeight;
