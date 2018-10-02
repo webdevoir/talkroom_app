@@ -99,6 +99,26 @@
     line-height: 2em;
     color: #fff;
   }
+  .edit-button {
+    display: table-cell;
+    text-align: right;
+    height: 2em;
+    width: 2em;
+    padding: 0;
+  }
+  .edit-button p {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.5em;
+    color: #fff;
+  }
+  .edit-button a {
+    text-decoration: none;
+  }
+  .edit-button p:hover {
+    background: #fff;
+    color: gray;
+  }
 
 
   .main-view {

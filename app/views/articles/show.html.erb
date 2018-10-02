@@ -1,0 +1,18 @@
+<% provide(:title, "Article") %>
+<div class="main-view">
+    <div id="chat-scroll" class="messages">
+        <div id="messages", data-room_id="<%= @article.id %>" class="chat-view-area">
+            <%= render @article_messages %>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="back-button">
+            <%= link_to rooms_path do %>
+                <p>Back</p>
+            <% end %>
+        </div>
+        <div class="room-title"><p><%= @article.name %></p></div>
+        <div class="menu-button"><p>    </p></div>
+    </div>
+</div>

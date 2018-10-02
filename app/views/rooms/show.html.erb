@@ -14,9 +14,12 @@
     <% end %>
   </div>
   <div class="room-title"><p><%= @room.name %></p></div>
-  <div class="menu-button"><p>    </p></div>
+    <div class="edit-button">
+      <%= link_to controller: "articles", action: "new", room_id: @room.id do %>
+        <p>EDIT</p>
+      <% end %>
+    </div>
 </div>
-
 
 <%= form_with url: '#', html: {id: 'new-message'} do |f| %>
   <div class="image-send-form">
