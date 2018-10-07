@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   def new
     @room = Room.find(params[:room_id])
-    @new_article_messages = @room.messages
+    @article_messages = @room.messages
   end
 
   def create

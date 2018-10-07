@@ -1,25 +1,25 @@
 <div class="chat-box" id='<%= article_message.id %>'>
     <div class="chat-area">
         <div class="time-id-info">
-            <p class="time-stamp"><%= "#{article_message.order}. #{article_message.user_name} #{simple_time(article_message.created_at)}" %></p>
+        <p class="time-stamp"><%= "#{article_message_counter + 1}.テスト #{article_message.user_name} #{simple_time(article_message.created_at)}" %></p>
         </div>
         <div class="chat-balloon-line">
-            <div class="chat-balloon">
-                <% if article_message.content.empty? && article_message.attachment_data.present? %>
-                <pre id="msg_id" class="msg_id">
-                    <%= link_to "View #{article_message.attachment.original_filename}",
-                    article_message.attachment.url, target: '_blank' %>
-                </pre>
-                <% elsif article_message.content.present? && article_message.attachment_data.present? %>
-                <pre id="msg_id" class="msg_id">
-                    <pre><%= article_message.content %></pre><br>
-                    <%= link_to "View #{article_message.attachment.original_filename}",
-                    article_message.attachment.url, target: '_blank' %>
-                </pre>
-                <% else %>
-                <pre id="msg_id" class="msg_id"><%= article_message.content %></pre>
-                <% end %>
-            </div>
+        <div class="chat-balloon">
+            <% if article_message.content.empty? && article_message.attachment_data.present? %>
+            <pre id="msg_id" class="msg_id">
+                <%= link_to "View #{article_message.attachment.original_filename}",
+                article_message.attachment.url, target: '_blank' %>
+            </pre>
+            <% elsif article_message.content.present? && article_message.attachment_data.present? %>
+            <pre id="msg_id" class="msg_id">
+                <pre><%= article_message.content %></pre><br>
+                <%= link_to "View #{article_message.attachment.original_filename}",
+                article_message.attachment.url, target: '_blank' %>
+            </pre>
+            <% else %>
+            <pre id="msg_id" class="msg_id"><%= article_message.content %></pre>
+            <% end %>
+        </div>
         </div>
     </div>
 </div>

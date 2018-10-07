@@ -6,7 +6,7 @@
                 <div class="article_title_form">
                     article_title: <%= text_field_tag "article_title", @room.name, maxlength: 50 %>
                 </div>
-                <%= render @new_article_messages %>
+                <%= render partial: "article_messages", collection: @article_messages %>
             <% end %>
             </div>
         </div>
