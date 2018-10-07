@@ -2,38 +2,55 @@ require 'rails_helper'
 
 RSpec.describe RoomsController, type: :controller do
 
-  describe "GET #show" do
-    it "returns http success" do
-      get :show
-      expect(response).to have_http_status(:success)
+  context "show" do
+    context "GET #show" do
+      it "returns http success" do
+        get :show
+        expect(response).to have_http_status(:success)
+      end
     end
   end
 
-  describe "GET #index" do
-    it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
+  context "index" do
+    context "GET #index" do
+      it "returns http success" do
+        get :index
+        expect(response).to have_http_status(:success)
+      end
+    end
+    context "user" do
+      it "create and log_in" do
+      end
+      it "log_in" do
+      end
+    end
+    context "search" do
+      it "fulfill" do
+      end
+      it "empty" do
+      end
     end
   end
 
-  describe "GET #new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
+  context "new" do
+    context "GET #new" do
+      it "returns http success" do
+        get :new
+        expect(response).to have_http_status(:success)
+      end
     end
   end
 
-  describe "GET #create" do
-    it "returns http success" do
-      get :create
-      expect(response).to have_http_status(:success)
+  context "create" do
+    context "change room_count when create room" do
+      it "fulfill name" do
+      end
+      it "empty name" do
+      end
     end
-  end
-
-  describe "GET #destroy" do
-    it "returns http success" do
-      get :destroy
-      expect(response).to have_http_status(:success)
+    context "room_tag" do
+      it "create room_tag" do
+      end
     end
   end
 

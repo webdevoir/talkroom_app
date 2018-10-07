@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :chat do
-    user_id { 1 }
-    chat_room_id { 1 }
-    content { "MyText" }
-    filename { "MyString" }
+    sequence(:user_id)  { n }
+    sequence(:chat_room_id)  { n }
+    sequence(:content)  { |n| "content #{n}" }
+    sequence(:filename)  { |n| "filename #{n}" }
   end
 end

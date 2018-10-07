@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :article do
-    title { "MyString" }
-    like { 1 }
+    sequence(:title)  { |n| "article_title #{n}" }
+    sequence(:like)  { n }
   end
 end

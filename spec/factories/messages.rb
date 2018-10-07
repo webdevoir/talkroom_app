@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :message do
-    user_id { 1 }
-    room_id { 1 }
-    content { "MyText" }
-    filename { "MyString" }
+    sequence(:user_id)  { n }
+    sequence(:room_id)  { n }
+    sequence(:content)  { |n| "content #{n}" }
+    sequence(:filename)  { |n| "filename #{n}" }
   end
 end

@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :chat_room do
-    user1_id { 1 }
-    user2_id { 1 }
+    sequence(:user1_id)  { n }
+    sequence(:user2_id)  { n }
   end
 end

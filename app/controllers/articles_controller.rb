@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
     else
       @article = Article.create(title: params[:article_title], like: 0)
     end
-  
+
     order = 1
     params[:messages].each do | message_id,judge |
       message = Message.find(message_id)
