@@ -1,0 +1,28 @@
+<% provide(:title, "Article edit") %>
+    <div class="main-view">
+        <div id="chat-scroll" class="messages">
+            <div id="messages" class="chat-view-area">
+            <%= form_tag(articles_path, method: :post, id: "article_create_form") do %>
+                <div class="article_title_form">
+                    article_title: <%= text_field_tag "article_title", @room.name, maxlength: 50 %>
+                </div>
+                <%= render partial: "article_messages", collection: @article_messages %>
+            <% end %>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="back-button">
+                <%= link_to rooms_path do %>
+                    <p>Back</p>
+                <% end %>
+            </div>
+            <div class="room-title">
+                <p><%= @room.name %></p>
+            </div>
+            <div class="menu-button"><input type="submit" value="CREATE" form="article_create_form"></div>
+        </div>
+        <div class="down-button">
+            <p>⬇</p>
+        </div>
+    </div>

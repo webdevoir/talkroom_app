@@ -1,0 +1,26 @@
+<div class="chat-box" id='<%= article_messages.id %>'>
+    <div class="chat-area">
+        <div class="time-id-info">
+        <p class="time-stamp"><%= "#{article_messages_counter + 1}. #{article_messages.user_name} #{simple_time(article_messages.created_at)}" %></p>
+        </div>
+        <div class="chat-balloon-line">
+        <div class="chat-balloon">
+            <% if article_messages.content.empty? && article_messages.attachment_data.present? %>
+            <pre id="msg_id" class="msg_id">
+                <%= link_to "View #{article_messages.attachment.original_filename}",
+                article_messages.attachment.url, target: '_blank' %>
+            </pre>
+            <% elsif article_messages.content.present? && article_messages.attachment_data.present? %>
+            <pre id="msg_id" class="msg_id">
+                <pre><%= article_messages.content %></pre><br>
+                <%= link_to "View #{article_messages.attachment.original_filename}",
+                article_messages.attachment.url, target: '_blank' %>
+            </pre>
+            <% else %>
+            <pre id="msg_id" class="msg_id"><%= article_messages.content %></pre>
+            <% end %>
+        </div>
+        </div>
+    </div>
+        <%=check_box "messages", "#{article_messages.id}" %>delete
+</div>

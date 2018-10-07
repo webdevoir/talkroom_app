@@ -1,6 +1,7 @@
 document.addEventListener 'DOMContentLoaded', (->
   messages_count = $('.time-stamp').length
-  if messages_count > 0
+  article_judge = $('.down-button').length
+  if messages_count > 0 && article_judge <= 0
     for i in [1..messages_count]
       time_stamp = $('.time-stamp').eq(i - 1)
       time_stamp.wrapInner('<a>' + i + '. </a>')

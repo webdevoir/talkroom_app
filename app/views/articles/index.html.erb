@@ -1,0 +1,25 @@
+<% provide(:title, "Article Select") %>
+
+<div class="main-page-select">
+  <div class="over-scroll">
+    <div class="room-search">
+      <form>
+        <%= form_tag articles_path, method: 'get' do %>
+          <div class="form-label"><p>ARTICLE SEARCH</p></div>
+          <%= text_field_tag :search, params[:search], class: "text-input-form" %>
+          <%= submit_tag "SEARCH", name: nil, class: "search-button link-none" %>
+        <% end %>
+      </form>
+        <%= link_to rooms_path, class: 'link-none' do %>
+          <div class="search-button">TOP</div>
+        <% end %>
+    </div>
+
+    <div class="room-content">
+      <div class="room-content-title"><p><%= @article_heading %></p></div>
+      <div class="active-room">
+        <%= render @articles %>
+      </div>
+    </div>
+  </div>
+</div>
