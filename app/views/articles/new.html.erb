@@ -2,7 +2,12 @@
     <div class="main-view">
         <div id="chat-scroll" class="messages">
             <div id="messages" class="chat-view-area">
-                <%= render @article_messages %>
+            <%= form_tag(articles_path, method: :post, id: "article_create_form") do %>
+                <div class="article_title_form">
+                    article_title: <%= text_field_tag "article_title", @room.name, maxlength: 50 %>
+                </div>
+                <%= render @new_article_messages %>
+            <% end %>
             </div>
         </div>
 
@@ -13,11 +18,10 @@
                 <% end %>
             </div>
             <div class="room-title">
-                <p><%= @article.title %></p>
+                <p><%= @room.name %></p>
             </div>
-            <div class="menu-button"><p>CREATE</p></div>
+            <div class="menu-button"><input type="submit" value="CREATE" form="article_create_form"></div>
         </div>
-
         <div class="down-button">
             <p>⬇</p>
         </div>

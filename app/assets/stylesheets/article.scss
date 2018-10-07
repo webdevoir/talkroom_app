@@ -51,6 +51,17 @@
 .back-button a {
     text-decoration: none;
 }
+.menu-button input {
+    border-style: none;
+    font-size: 0.6em;
+    padding: 0.7em;
+    cursor: pointer;
+}
+.menu-button input:hover {
+    background: gray;
+    color: white;
+}
+
 .room-title {
     display: table-cell;
     text-align: center;
@@ -135,7 +146,7 @@
 .down-button {
     width: 3em;
     height: 3em;
-    // position: sticky;
+    position: sticky;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -151,6 +162,16 @@
 .down-button p {
     margin: auto;
     font-size: 2em;
+}
+
+.article_title_form {
+    margin: 1em auto 1em auto;
+    text-align: center;
+}
+.article_title_form input {
+    font-size: 1em;
+    width: 25em;
+    height: 2em;
 }
 
 // room select page
@@ -170,6 +191,9 @@
     padding: 0;
     overflow: scroll;
 }
+.form-label {
+    font-size: 2.5em;
+}
 
 .text-input-form {
     border: 0;
@@ -185,7 +209,7 @@
 
 .room-search {
     width: 70%;
-    margin: 3% auto 5% auto;
+    margin: 3% auto 2% auto;
 }
 .room-search form {
     width: 100%;

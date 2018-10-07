@@ -8,11 +8,18 @@
 
     <div class="nav">
         <div class="back-button">
-            <%= link_to rooms_path do %>
+            <%= link_to articles_path do %>
                 <p>Back</p>
             <% end %>
         </div>
-        <div class="room-title"><p><%= @article.name %></p></div>
-        <div class="menu-button"><p>    </p></div>
+        <div class="room-title"><p><%= @article.title %></p></div>
+        <div class="menu-button">
+            <%= link_to controller: "articles", action: "like", article_id: @article.id do %>
+                <p>LIKE</p>
+            <% end %>
+        </div>
+    </div>
+    <div class="down-button" id="down_button">
+        <p>⬇</p>
     </div>
 </div>
