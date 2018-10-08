@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 
   def create
     if params[:article_title] == ""
-      @article = Article.create(title: ARTICLE, like: 0)
+      @article = Article.create(title: "ARTICLE", like: 0)
     else
       @article = Article.create(title: params[:article_title], like: 0)
     end

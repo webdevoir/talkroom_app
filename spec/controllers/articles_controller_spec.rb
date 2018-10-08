@@ -2,13 +2,16 @@ require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
 
-  let(:user) { FactoryBot.create(:user) }
+  let!(:user) { FactoryBot.create(:user) }
+  let!(:room) { FactoryBot.create(:room) }
+  let!(:message) { FactoryBot.build(:message) }
+  let!(:article) { FactoryBot.create(:article) }
   before { log_in user }
 
   context "new" do
     context "GET #new" do
       it "returns http success" do
-        get :new
+        get :new, params: { room_id: room.id }
         expect(response).to have_http_status(:success)
       end
     end
@@ -17,17 +20,17 @@ RSpec.describe ArticlesController, type: :controller do
   context "create" do
     context "change article_count when create" do
       it "fulfill title" do
+        message_create(user,room)
         expect{
-          post :create, params: { article: { article_title: "title" } }
+          post :create, params: { article_title: "title", messages: { "#{message.id}" => "0" } }
         }.to change { Article.count }.by(1)
       end
       it "empty title" do
+        message_create(user,room)
         expect{
-          post :create, params: { article: { article_title: "" } }
+          post :create, params: { article_title: "", messages: { "#{message.id}" => "0" } }
         }.to change { Article.count }.by(1)
       end
-    end
-    context "change article_message_count when create" do
     end
   end
 
@@ -40,8 +43,12 @@ RSpec.describe ArticlesController, type: :controller do
     end
     context "search" do
       it "empty" do
+        post :index, params: { room: { search: "" } }
+        expect(response).to have_http_status(:success)
       end
       it "fulfill" do
+        post :index, params: { room: { search: "title" } }
+        expect(response).to have_http_status(:success)
       end
     end
   end
@@ -49,21 +56,24 @@ RSpec.describe ArticlesController, type: :controller do
   context "show" do
     context "GET #show" do
       it "returns http success" do
-        #make article, get id
+        get :show, params: { id: article.id }
         expect(response).to have_http_status(:success)
       end
     end
   end
 
-  context "like" do
-    context "GET #like" do
-      it "returns http success" do
-        get :like
-        expect(response).to have_http_status(:success)
-      end
-      it "like_count" do
-      end
-    end
-  end
+  # context "like" do
+  #   context "GET #like" do
+  #     it "returns http success" do
+  #       get :like, params: { article_id: article.id }
+  #       expect(response).to have_http_status 302
+  #     end
+  #     it "like_count" do
+  #       expect {
+  #         get :like, params: { article_id: article.id }
+  #       }.to change{ article.like }.by(1)
+  #     end
+  #   end
+  # end
 
 end
