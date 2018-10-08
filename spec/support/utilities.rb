@@ -2,6 +2,10 @@ def log_in(user)
     session[:user_id] = user.id
 end
 
+def log_in_as
+    visit rooms_path
+end
+
 def log_out(user)
     session[:user_id] = nil
 end

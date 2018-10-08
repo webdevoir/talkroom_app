@@ -4,9 +4,9 @@
   <div class="over-scroll">
     <div class="user-name">
       <div class="user-name-value"><p>NAME： <%= @user.name %></p></div>
-      <%= link_to edit_user_path(@user.id), class: 'link-none' do %>
-        <div class="search-button">CHANGE</div>
-      <% end %>
+        <div class="search-button">
+          <%= link_to "CHANGE", edit_user_path(@user.id), class: 'link-none', id: 'user_edit' %>
+        </div>
     </div>
     <div class="room-search">
       <form>
@@ -15,15 +15,15 @@
           <%= text_field_tag :search, params[:search], class: "text-input-form" %>
           <%= submit_tag "SEARCH", name: nil, class: "search-button link-none" %>
         <% end %>
-        <%= link_to new_room_path, class: 'link-none' do %>
-          <div class="search-button">CREATE</div>
-        <% end %>
-        <%= link_to chat_rooms_path, class: 'link-none' do %>
-          <div class="search-button">RANDOM TALK</div>
-        <% end %>
-        <%= link_to articles_path, class: 'link-none' do %>
-          <div class="search-button">ARTICLES</div>
-        <% end %>
+          <div class="search-button">
+            <%= link_to "CREATE", new_room_path, class: 'link-none' %>
+          </div>
+          <div class="search-button">
+            <%= link_to "RANDOM TALK", chat_rooms_path, class: 'link-none' %>
+          </div>
+          <div class="search-button">
+          <%= link_to "ARTICLES", articles_path, class: 'link-none' %>
+          </div>
       </form>
     </div>
 
