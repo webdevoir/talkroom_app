@@ -15,9 +15,7 @@
   </div>
   <div class="room-title"><p><%= @room.name %></p></div>
     <div class="edit-button">
-      <%= link_to controller: "articles", action: "new", room_id: @room.id do %>
-        <p>EDIT</p>
-      <% end %>
+        <p class="edit-link"><%= link_to "EDIT", controller: "articles", action: "new", room_id: @room.id %></p>
     </div>
 </div>
 
