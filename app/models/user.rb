@@ -7,4 +7,14 @@ class User < ApplicationRecord
     last_month = Date.today.prev_month
     User.destroy_all(updated_at: last_month.in_time_zone.all_month)
   end
+
+  scope :updated_at_between, -> from, to {
+    if from.present? && to.present?
+      where(updated_at: from..to)
+    elsif from.present?
+      where('updated_at >= ?', from)
+    elsif to.present?
+      where('updated_at <= ?', to)
+    end
+  }
 end

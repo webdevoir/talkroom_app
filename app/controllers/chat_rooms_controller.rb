@@ -1,4 +1,6 @@
 class ChatRoomsController < ApplicationController
+  before_action :logged_in_user
+
   def show
     @chat_room = ChatRoom.find(params[:id])
     @chats = @chat_room.chats

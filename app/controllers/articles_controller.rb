@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :logged_in_user
+
   def new
     @room = Room.find(params[:room_id])
     @article_messages = @room.messages
@@ -25,7 +27,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    if params[:search] == nil || params[:search] == ''
+    if params[:search].blank?
       @articles = Article.all.order(like: "DESC")
       @article_heading = "ARTICLES"
     else

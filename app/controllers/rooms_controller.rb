@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  before_action :logged_in_user, only: [:show, :new, :create]
+
   def show
     @room = Room.find(params[:id])
     @messages = @room.messages
@@ -22,7 +24,7 @@ class RoomsController < ApplicationController
 
   def create
     room_tag_setting
-    if @room_name == ""
+    if @room_name.empty?
       room_setting
     else
       @room = Room.create(name: @room_name)
@@ -35,7 +37,7 @@ class RoomsController < ApplicationController
         RoomTag.create(room_id: @room.id, name: tag)
       end
     end
-
+    delete_room_user_inactive
     redirect_to room_path(@room.id)
   end
 
@@ -56,7 +58,7 @@ class RoomsController < ApplicationController
     end
 
     def room_search
-      if params[:search] == nil || params[:search] == ''
+      if params[:search].blank?
         @rooms = Room.all
         @room_heading = "ACTIVE ROOM"
       else
@@ -69,6 +71,19 @@ class RoomsController < ApplicationController
         end
         @rooms = Room.where(query, *words.map{|w| "%#{w}%"}).or(Room.where(id: @rooms_id))
         @room_heading = "SEARCH RESULT"
+      end
+    end
+
+    def delete_room_user_inactive
+      last_month = Date.today.prev_month
+      last_week = Date.today.prev_week
+      delete_user = User.updated_at_between(nil, last_month)
+      delete_room = Room.updated_at_between(nil, last_week)
+      if delete_user.present?
+        delete_user.destroy_all
+      end
+      if delete_room.present?
+        delete_room.destroy_all
       end
     end
 
