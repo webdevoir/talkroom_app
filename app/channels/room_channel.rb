@@ -10,7 +10,6 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    puts data['message']
     message = Message.new(content: data['message'], user_id: current_user.id,
       user_name: current_user.name, room: Room.find(params['room_id']))
     if data['file_uri']
