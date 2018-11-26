@@ -12,7 +12,12 @@ module ApplicationCable
         if verified_user = User.find_by(id: cookies.signed[:user_id])
           verified_user
         else
-          reject_unauthorized_connection
+          # user = User.create(name: "ゲスト")
+          # user.name = "ゲスト#{user.id}"
+          # user.save
+          # cookies.signed[:user_id] = user.id
+          # print(cookies.signed[:user_id])
+          # reject_unauthorized_connection
         end
       end
 
