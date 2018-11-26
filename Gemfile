@@ -12,6 +12,7 @@ gem 'whenever', require: false
 gem 'bcrypt'
 gem 'faker'
 gem 'carrierwave'
+gem 'jbuilder', '~> 2.5'
 gem 'mini_magick'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
